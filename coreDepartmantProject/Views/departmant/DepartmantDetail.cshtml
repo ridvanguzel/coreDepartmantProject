@@ -1,0 +1,40 @@
+﻿@using coreDepartmantProject.Models;
+@model List<personal>
+
+@{
+    ViewData["Title"] = "DepartmantDetail";
+    Layout = "~/Views/Shared/dashboardLayout.cshtml";
+}
+
+
+
+<table class="table table-bordered w-100 mt-2">
+    <tr>
+
+        <th>Personal ID</th>
+        <th>Personal Name</th>
+        <th>Personal Surname</th>
+        <th>Personal City</th>
+
+    </tr>
+    @if (Model != null)
+    {
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.personalid</td>
+                <td>@item.personalname</td>
+                <td>@item.personallastname</td>
+                <td>@item.personalsehir</td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="4">No data available</td>
+        </tr>
+    }
+
+
+</table>

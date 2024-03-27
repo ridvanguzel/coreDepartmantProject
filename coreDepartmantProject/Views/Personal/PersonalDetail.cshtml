@@ -1,0 +1,30 @@
+﻿@using coreDepartmantProject.Models;
+@model personal
+@{
+    ViewData["Title"] = "PersonalDetail";
+    Layout = "~/Views/Shared/dashboardLayout.cshtml";
+}
+
+
+<table class="table table-bordered w-100 mt-2">
+    <tr>
+
+        <th>Personal ID</th>
+        <th>Personal Name</th>
+        <th>Personal Surname</th>
+        <th>Personal City</th>
+        <th>Personal Departmant</th>
+
+    </tr>
+
+        <tr>
+            <td>@Model.personalid</td>
+            <td>@Model.personalname</td>
+            <td>@Model.personallastname</td>
+            <td>@Model.personalsehir</td>
+            <td>@Model.depart.deptname</td>
+
+        </tr>
+
+
+</table>

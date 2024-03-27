@@ -1,0 +1,25 @@
+﻿@model coreDepartmantProject.Models.personal
+
+@{
+    ViewData["Title"] = "BringPersonal";
+    Layout = "~/Views/Shared/dashboardLayout.cshtml";
+}
+
+<h1>BringPersonal</h1>
+
+<form asp-action="UpdatePersonal" asp-controller="Personal" method="post" class="form" id="BringPersonal">
+    <label for="">Personal ID</label>
+    <input type="text" class="form-control" asp-for="personalid">
+    <label for="">Personal Name</label>
+    <input type="text" class="form-control" asp-for="personalname">
+    <label for="">Personal Last Name</label>
+    <input type="text" class="form-control" asp-for="personallastname">
+    <label for="">Personal City Name</label>
+    <input type="text" class="form-control" asp-for="personalsehir">
+    <label for="">Personal Departmant Name</label>
+    @Html.DropDownListFor(x => x.depart.deptid, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control"})
+
+    <button class="btn btn-success mt-4" value="Update Personal">Update Personal</button>
+</form>
+
+

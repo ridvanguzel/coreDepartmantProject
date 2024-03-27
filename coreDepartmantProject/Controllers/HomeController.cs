@@ -1,5 +1,6 @@
 ﻿using coreDepartmantProject.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace coreDepartmantProject.Controllers
@@ -7,7 +8,7 @@ namespace coreDepartmantProject.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        Context c = new Context();
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -15,6 +16,7 @@ namespace coreDepartmantProject.Controllers
 
         public IActionResult Index()
         {
+           
             return View();
         }
 

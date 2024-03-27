@@ -1,0 +1,41 @@
+﻿@using coreDepartmantProject.Models;
+@model List<personal>
+
+@{
+    ViewData["Title"] = "employee";
+    Layout = "~/Views/Shared/dashboardLayout.cshtml";
+}
+<table class="table table-bordered w-100 mt-2">
+    <tr>
+
+        <th>Personal ID</th>
+        <th>Personal Name</th>
+        <th>Personal Surname</th>
+        <th>Personal City</th>
+        <th>Personal Departmant</th>
+        <th>Update</th>
+        <th>Details</th>
+        <th>Delete</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.personalid</td>
+            <td>@item.personalname</td>
+            <td>@item.personallastname</td>
+            <td>@item.personalsehir</td>
+            <td>@item.depart.deptname</td>
+
+            <td><a href="/Personal/BringPersonal/@item.personalid" class="btn btn-success">Update</a></td>
+            <td><a href="/Personal/PersonalDetail/@item.personalid" class="btn btn-secondary">Details</a></td>
+            <td><a href="/Personal/DeletePersonal/@item.personalid" class="btn btn-danger">Delete</a></td>
+
+        </tr>
+
+
+    }
+
+</table>
+<a href="/Personal/AddNewPersonal" class="btn bg-primary text-white py-1 px-2">Add New Personal</a>
+

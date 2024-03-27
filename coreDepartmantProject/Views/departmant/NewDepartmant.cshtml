@@ -1,0 +1,17 @@
+﻿@model coreDepartmantProject.Models.departmant;
+@{
+    ViewData["Title"] = "NewDepartmant";
+    Layout = "~/Views/Shared/dashboardLayout.cshtml";
+}
+
+<h1>Add New Departmant</h1>
+
+<form method="post" class="form-group">
+
+    <label>Departmant Name</label>
+    @Html.TextBoxFor(x=>x.deptname, new {@class = "form-control"})
+
+    <button class="btn btn-success">Add Departmant</button>
+
+</form>
+

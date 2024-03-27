@@ -19,9 +19,9 @@
         <tr>
             <td>@item.deptid</td>
             <td>@item.deptname</td>
-            <td><a href="#" class="btn btn-success">Update</a></td>
-            <td><a href="#" class="btn btn-secondary">Details</a></td>
-            <td><a href="#" class="btn btn-danger">Delete</a></td>
+            <td><a href="/departmant/BringDepartmant/@item.deptid" class="btn btn-success">Update</a></td>
+            <td><a href="/departmant/DepartmantDetail/@item.deptid" class="btn btn-secondary">Details</a></td>
+            <td><a href="/departmant/DeleteDepartmant/@item.deptid" class="btn btn-danger">Delete</a></td>
 
         </tr>
 
@@ -29,5 +29,5 @@
     }
    
 </table>
-<a href="#" class="btn bg-primary text-white py-1 px-2">Add New Departmant</a>
+<a href="/departmant/NewDepartmant" class="btn bg-primary text-white py-1 px-2">Add New Departmant</a>
 

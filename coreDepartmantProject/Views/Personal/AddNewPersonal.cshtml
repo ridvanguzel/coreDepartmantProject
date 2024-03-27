@@ -1,0 +1,22 @@
+﻿@model coreDepartmantProject.Models.personal;
+@{
+    ViewData["Title"] = "AddNewPersonal";
+    Layout = "~/Views/Shared/dashboardLayout.cshtml";
+}
+
+<h1>Add New Personal</h1>
+
+<form method="post" class="form-group">
+
+    <label>Personal Name</label>
+    @Html.TextBoxFor(x=>x.personalname, new {@class = "form-control"})
+    <label>Personal Last Name</label>
+    @Html.TextBoxFor(x=>x.personallastname, new {@class = "form-control"})
+    <label>Personal City</label>
+    @Html.TextBoxFor(x=>x.personalsehir, new {@class = "form-control"})
+    <label>Personal Unit Id</label>
+    @Html.DropDownListFor(x => x.depart.deptid, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control"})
+    <button class="btn btn-success mt-5">Add New Personal</button>
+
+</form>
+

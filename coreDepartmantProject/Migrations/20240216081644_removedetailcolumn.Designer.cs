@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using coreDepartmantProject.Models;
 
@@ -10,9 +11,10 @@ using coreDepartmantProject.Models;
 namespace coreDepartmantProject.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20240216081644_removedetailcolumn")]
+    partial class removedetailcolumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,9 +48,6 @@ namespace coreDepartmantProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("personalid"), 1L, 1);
 
-                    b.Property<int>("departdeptid")
-                        .HasColumnType("int");
-
                     b.Property<string>("personallastname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -63,25 +62,7 @@ namespace coreDepartmantProject.Migrations
 
                     b.HasKey("personalid");
 
-                    b.HasIndex("departdeptid");
-
                     b.ToTable("personals");
-                });
-
-            modelBuilder.Entity("coreDepartmantProject.Models.personal", b =>
-                {
-                    b.HasOne("coreDepartmantProject.Models.departmant", "depart")
-                        .WithMany("personals")
-                        .HasForeignKey("departdeptid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("depart");
-                });
-
-            modelBuilder.Entity("coreDepartmantProject.Models.departmant", b =>
-                {
-                    b.Navigation("personals");
                 });
 #pragma warning restore 612, 618
         }

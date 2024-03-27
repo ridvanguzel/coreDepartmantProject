@@ -1,0 +1,22 @@
+﻿@model coreDepartmantProject.Models.departmant;
+@{
+    ViewData["Title"] = "BringDepartmant";
+    Layout = "~/Views/Shared/dashboardLayout.cshtml";
+}
+
+<h1>Update Departmant</h1>
+
+@using (Html.BeginForm("UpdateDepartmant", "departmant", FormMethod.Post))
+{
+    <label>Departmant Id</label>
+    @Html.TextBoxFor(x=>x.deptid, new {@class = "form-control"})
+    
+    <label>Departmant Name</label>
+    @Html.TextBoxFor(x=>x.deptname, new {@class = "form-control"})
+
+    <br />
+    <br />
+    <br />
+    <button class="btn btn-warning">Update Departmant</button>
+}
+

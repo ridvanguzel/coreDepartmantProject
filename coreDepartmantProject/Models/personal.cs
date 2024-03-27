@@ -9,5 +9,7 @@ namespace coreDepartmantProject.Models
         public string personalname{ get; set; }
         public string personallastname { get; set; }
         public string personalsehir { get; set; }
+
+        public  departmant depart { get; set; }
     }
 }

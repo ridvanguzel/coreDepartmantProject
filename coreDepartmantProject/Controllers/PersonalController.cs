@@ -1,4 +1,5 @@
 ﻿using coreDepartmantProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,9 @@ namespace coreDepartmantProject.Controllers
     public class PersonalController : Controller
     {
         Context c = new Context();
+
+        [Authorize] 
+        // ekledik
         public IActionResult Employee()
         {
             //Birimin ismini listelemek için kullandık Include metodu için entityframework kodu lazm

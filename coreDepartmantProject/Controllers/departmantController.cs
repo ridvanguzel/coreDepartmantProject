@@ -50,6 +50,9 @@ namespace coreDepartmantProject.Controllers
         public IActionResult DepartmantDetail(int Id)
         {
             var degerler = c.personals.Where(x => x.depart.deptid == Id).ToList();
+            var brmad = c.departmants.Where(x => x.deptid == Id).Select(x => x.deptname).FirstOrDefault();
+
+            ViewBag.departname = brmad;
             return View(degerler);
         }
     }
